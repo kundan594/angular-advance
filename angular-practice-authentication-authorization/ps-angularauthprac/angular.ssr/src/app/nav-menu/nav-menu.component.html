@@ -1,0 +1,38 @@
+<header>
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+  >
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']">Angular BFF Sample</a>
+
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+      >
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item"
+              routerLinkActive="link-active"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          </li>
+
+          @if (authenticated()) {
+            <li class="nav-item"
+                routerLinkActive="link-active"
+                [routerLinkActiveOptions]="{ exact: true }">
+              <a class="nav-link text-dark" [routerLink]="['/user-session']">Show User Session</a>
+            </li>
+          } @else {
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="/bff/login">Login</a>
+            </li>
+          }
+
+          @if (authenticated()) {
+            <li class="nav-item">
+              <a class="nav-link text-dark" [href]="logoutUrl()">Signout</a></li>
+          }
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

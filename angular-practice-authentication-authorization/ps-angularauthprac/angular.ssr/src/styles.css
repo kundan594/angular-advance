@@ -1,0 +1,17 @@
+.themeFontColor {
+  color: coral;
+}
+
+tr {
+  cursor: pointer;
+}
+
+.logo {
+  height: 150px;
+}
+
+.subtitleStyle {
+  font-style: italic;
+  font-size: x-large;
+  color: coral;
+}
