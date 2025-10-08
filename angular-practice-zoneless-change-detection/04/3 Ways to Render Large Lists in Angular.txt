@@ -1,0 +1,7 @@
+https://blog.bitsrc.io/3-ways-to-render-large-lists-in-angular-9f4dcb9b65
+
+We will take a look at the following techniques:
+
+Virtual Scrolling (using the Angular CDK)
+Manual Rendering
+Progressive Rendering

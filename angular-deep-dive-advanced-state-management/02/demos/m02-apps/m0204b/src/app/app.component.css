@@ -1,0 +1,9 @@
+/* TaskFlow App Styles */
+body {
+  background-color: #f8f9fa;
+}
+
+.container-fluid {
+  max-width: 1400px;
+  margin: 0 auto;
+}

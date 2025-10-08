@@ -1,0 +1,19 @@
+<div class="notifications-container" *ngIf="currentNotification">
+  <div class="notification-toast">
+    <div class="notification-content">
+      <div class="notification-icon">
+        <i class="bi bi-bell-fill text-primary"></i>
+      </div>
+      <div class="notification-message">
+        {{ currentNotification }}
+      </div>
+      <button 
+        class="notification-close" 
+        (click)="removeNotification()"
+        aria-label="Close notification"
+      >
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+</div>

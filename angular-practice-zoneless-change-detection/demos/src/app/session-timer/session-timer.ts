@@ -26,19 +26,19 @@ export class SessionTimerComponent {
 
     // 1. / 2.
     constructor() {
-        const timerId = setInterval(() => {
-            // 1. / 2.
-            // this.secondsRemaining = Math.max(this.secondsRemaining - 1, 0);
-            // this.formattedRemaining = this.formatMMSS(this.secondsRemaining);
+        // const timerId = setInterval(() => {
+        //     // 1. / 2.
+        //     // this.secondsRemaining = Math.max(this.secondsRemaining - 1, 0);
+        //     // this.formattedRemaining = this.formatMMSS(this.secondsRemaining);
 
-            // 2. --------------------------------------------- Change Detector Ref
-            // this.cdRef.markForCheck();
+        //     // 2. --------------------------------------------- Change Detector Ref
+        //     // this.cdRef.markForCheck();
 
-            // 3. --------------------------------------------- Signals
-            this.secondsRemaining.update(v => Math.max(v - 1, 0));
-        }, 1000);
+        //     // 3. --------------------------------------------- Signals
+        //     this.secondsRemaining.update(v => Math.max(v - 1, 0));
+        // }, 1000);
       
-        this.destroyRef.onDestroy(() => clearInterval(timerId));
+        // this.destroyRef.onDestroy(() => clearInterval(timerId));
     }
 
     private formatMMSS(totalSeconds: number): string {

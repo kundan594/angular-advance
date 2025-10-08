@@ -1,0 +1,77 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="mb-0">
+      <i class="bi bi-plus-circle me-2"></i>
+      Add New Task
+    </h5>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+      <div class="mb-3">
+        <label for="title" class="form-label">Task Title *</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="title" 
+          name="title"
+          [(ngModel)]="formData.title"
+          required
+          placeholder="Enter task title">
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea 
+          class="form-control" 
+          id="description" 
+          name="description"
+          [(ngModel)]="formData.description"
+          rows="3"
+          placeholder="Enter task description"></textarea>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="priority" class="form-label">Priority</label>
+          <select 
+            class="form-select" 
+            id="priority" 
+            name="priority"
+            [(ngModel)]="formData.priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="dueDate" class="form-label">Due Date</label>
+          <input 
+            type="date" 
+            class="form-control" 
+            id="dueDate" 
+            name="dueDate"
+            [value]="formData.dueDate ? (formData.dueDate | date:'yyyy-MM-dd') : ''"
+            (change)="onDueDateChange($event)">
+        </div>
+      </div>
+
+      <div class="d-flex gap-2">
+        <button 
+          type="submit" 
+          class="btn btn-primary"
+          [disabled]="!formData.title.trim()">
+          <i class="bi bi-plus-circle me-1"></i>
+          Add Task
+        </button>
+        <button 
+          type="button" 
+          class="btn btn-outline-secondary"
+          (click)="resetForm()">
+          <i class="bi bi-arrow-clockwise me-1"></i>
+          Reset
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
