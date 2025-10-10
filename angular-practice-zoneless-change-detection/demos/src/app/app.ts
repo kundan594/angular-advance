@@ -16,11 +16,11 @@ import { SidebarComponent } from './sidebar/sidebar';
         SidebarComponent, 
         MainContentComponent, 
         FooterComponent, 
-        // SessionTimerComponent, 
-        // ScrollInsightsComponent, 
-        // ProductsComponent,
-        // ProductDetailsComponent,
-        // ProductToolbarComponent
+        SessionTimerComponent, 
+        ScrollInsightsComponent, 
+        ProductsComponent,
+        ProductDetailsComponent,
+        ProductToolbarComponent
     ],
     changeDetection: ChangeDetectionStrategy.OnPush
 })

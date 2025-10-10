@@ -1,0 +1,6 @@
+Material Design Bidirectionality https://m2.material.io/design/usability/bidirectionality.html
+
+Mozilla Developer Network (MDN) Logical properties
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values/Basic_concepts_of_logical_properties_and_values 
+Angular CDK Bidirectionality
+https://material.angular.dev/cdk/bidi/overview
