@@ -1,0 +1,51 @@
+<div class="outer-wrap">
+  <div class="inner-wrap">
+    <header>
+      <h1>Clean Architecture Angular Todo app</h1>
+      <div>
+        <button
+          title="Add new list"
+          class="bx bx-list-plus"
+          (click)="showAddForm()"></button>
+        <button
+          title="Save lists"
+          class="bx bxs-save"
+          (click)="saveLists()"></button>
+      </div>
+    </header>
+    <main class="main">
+      <div class="content">
+        <router-outlet />
+
+        <div class="lists">
+          @if (lists.length) {
+            @for (list of lists; track list) {
+              <app-list
+                [list]="list"
+                (deleteList)="deleteTodoList($event)"
+                (saveList)="saveLists()"></app-list>
+            }
+          } @else {
+            <div class="no-lists">
+              <h2>You don't have any lists!</h2>
+              <p>
+                Add one now?
+                <button
+                  title="Add new list"
+                  class="bx bx-list-plus"
+                  (click)="showAddForm()"></button>
+              </p>
+            </div>
+          }
+        </div>
+      </div>
+      @if (showError) {
+        <app-error
+          [name]="errorName"
+          [message]="errorMessage"
+          (closePopup)="closeErrorPopup()">
+        </app-error>
+      }
+    </main>
+  </div>
+</div>

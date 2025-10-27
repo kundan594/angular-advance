@@ -1,0 +1,45 @@
+@if (list) {
+  <article>
+    <header>
+      <h1>{{ list.title }}</h1>
+      <div>
+        @if (list.todos.length) {
+          <button
+            title="Add todo"
+            class="bx bxs-file-plus"
+            (click)="showAddForm()"></button>
+        }
+        <button
+          title="Delete list"
+          class="bx bxs-trash delete"
+          (click)="deleteTodoList()"></button>
+      </div>
+    </header>
+    @if (list.todos.length) {
+      <ol>
+        @for (todo of list.todos; track todo) {
+          <li>
+            <app-todo
+              [todo]="todo"
+              (delete)="deleteTodo($event)"
+              (saveTodo)="saveList.emit()"></app-todo>
+          </li>
+        }
+      </ol>
+    } @else {
+      <div class="content">
+        <p>You don't have any todos in this list! Add one now?</p>
+        <button
+          title="Add todo"
+          class="bx bx-list-plus"
+          (click)="showAddForm()"></button>
+      </div>
+    }
+  </article>
+}
+
+@if (showAddTodoForm) {
+  <app-new-todo-popup
+    (newTodo)="addTodo($event)"
+    (closeModal)="closeAddForm()"></app-new-todo-popup>
+}
