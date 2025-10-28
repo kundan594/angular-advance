@@ -1,0 +1,22 @@
+
+name: CI
+on: [push]
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
+          cache-dependency-path: tracking-performance/package-lock.json
+      - name: Install dependencies
+        run: npm install --prefix tracking-performance
+      - name: Build
+        run: npm run build --prefix tracking-performance
+      - name: Run Lighthouse
+        run: |
+          npm install -g @lhci/cli@0.13.x
+          lhci autorun

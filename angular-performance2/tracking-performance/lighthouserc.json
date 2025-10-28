@@ -1,0 +1,10 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "./dist/performance-course/browser"
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}
